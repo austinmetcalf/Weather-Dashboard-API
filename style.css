@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0%;
+    background: black;
+    
+    background-image: url(https://images.unsplash.com/photo-1658023495319-2786b348d829?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80);
+}
+.card {
+    background-color: white;
+    padding: 1em;
+    border-radius: 40px;
+    max-width: 400px;
+    width: 100%;
+    margin: 1em;
+}
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+button {
+    margin: 1em;
+    width: 2em;
+    height: 2em;
+}
+input.search-bar {
+    background: lightgray;
+    border-radius: 10px;
+}
+#search-button{
+    width: fit-content;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
