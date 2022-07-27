@@ -1,9 +1,7 @@
 let weather = {
     "apiKey": 'd94acb1c154e24b31d8e27b84e831950'
 }
-// $(document).ready(function(){
-//     var date = moment().format('YYYY-MM-DD')
-// }
+
 
 
 let searchButton = document.querySelector("#search-button")
@@ -22,7 +20,7 @@ function geoCode(searchValue){
         forecast(dataReturn[0].lat, dataReturn[0].lon)
     })
 }
-// create function that takes in latitude and longitude of searched city and returns current weather data
+
 function currentWeather(lat, lon){
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=d94acb1c154e24b31d8e27b84e831950&units=imperial`)
     .then(response => response.json())
@@ -33,7 +31,7 @@ function currentWeather(lat, lon){
         cityName.textContent = "Weather in " + dataReturn.name
 
         var temperature = document.createElement("h3")
-        temperature.textContent = "Temperature is: " + dataReturn.main.temp
+        temperature.textContent = "Temperature is: " + dataReturn.main.temp + " F"
         
         var humidity = document.createElement("h3")
         humidity.textContent = "Humidity is: " + dataReturn.main.humidity
@@ -46,33 +44,18 @@ function currentWeather(lat, lon){
         document.querySelector(".weather").append(cityName, temperature, humidity, wind)
     })
 }
-// create function that takes lat and long and returns daily forecast
+
 function forecast(lat, lon){
     fetch(`http://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lon}&cnt=6&appid=d94acb1c154e24b31d8e27b84e831950&units=imperial`)
     .then(response => response.json())
     .then(dataReturn => {
         console.log(dataReturn)
-        // based off 16 day forecast return as of now, may need to change later
+        
 for(var i = 0 ; i < dataReturn.length - 11; i++){
 var temperature = document.createElement("h5")
         temperature.textContent = "temperature is " + dataReturn[i].list[0].temp.day
 
-     document.querySelector("#five-day") //add append here to attach weather data
+     document.querySelector("#five-day") 
 }
-        // var cityName = document.createElement("h2")
-        // cityName.textContent = "Weather in " + dataReturn.name
-
-        // var temperature = document.createElement("h3")
-        // temperature.textContent = "temperature is " + dataReturn.main.temp
-        
-        // var humidity = document.createElement("h3")
-        // humidity.textContent = "humidity is " + dataReturn.main.humidity
-
-        // var wind = document.createElement("h3")
-        // wind.textContent = "wind is " + dataReturn.wind.speed
-
-
-
-        // document.querySelector(".weather").append(cityName, temperature, humidity, wind)
     })
 }

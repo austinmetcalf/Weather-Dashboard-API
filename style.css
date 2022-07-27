@@ -33,6 +33,7 @@ input.search-bar {
 }
 #search-button{
     width: fit-content;
+    background-color: aliceblue;
 }
 img{
     max-width: 100%;
