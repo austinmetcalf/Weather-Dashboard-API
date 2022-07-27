@@ -12,7 +12,7 @@ searchButton.addEventListener("click", function(){
 })
 
 function geoCode(searchValue){
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${searchValue}&limit=5&appid=d94acb1c154e24b31d8e27b84e831950`)
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${searchValue}&limit=5&appid=d94acb1c154e24b31d8e27b84e831950`)
     .then(response => response.json())
     .then(dataReturn => {
         console.log(dataReturn)
